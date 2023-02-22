@@ -136,7 +136,7 @@ with c1:
     st.plotly_chart(fig2)
 with c2:
     ########## hours where orderes are high can be used for advertisment
-    st.markdown(f'<h1 style="color:#FF5349;font-size:20px;">{"High Orders Hours"}</h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1 style="color:#FF5349;font-size:20px;">{"Peak Hours for Purchase Order"}</h1>', unsafe_allow_html=True)
 
     hours_data=df.groupby(['Hour']).agg({ 'Order ID' : 'count'})
 
