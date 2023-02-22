@@ -193,7 +193,7 @@ else:
 
 with c2:
     ########## correlation between products
-    st.markdown(f'<h1 style="color:#FF5349;font-size:20px;">{"Correlation of " + str(selected_product)+" with volume of other products "}</h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1 style="color:#FF5349;font-size:20px;">{"Correlation between volume of products "}</h1>', unsafe_allow_html=True)
 
     corr_data=df.groupby(['Month','Product']).agg({ 'Sales' : 'sum'}).sort_values('Month')
     corr_data=corr_data.reset_index().pivot(index='Month',columns='Product',values='Sales')
