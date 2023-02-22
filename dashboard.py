@@ -136,7 +136,7 @@ with c1:
     st.plotly_chart(fig2)
 with c2:
     ########## hours where orderes are high can be used for advertisment
-    st.markdown(f'<h1 style="color:#FF5349;font-size:20px;">{"Hours to show Advertisement"}</h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1 style="color:#FF5349;font-size:20px;">{"High Orders Hours"}</h1>', unsafe_allow_html=True)
 
     hours_data=df.groupby(['Hour']).agg({ 'Order ID' : 'count'})
 
@@ -200,7 +200,7 @@ with c2:
     corr_data = corr_data.rename_axis(None, axis=1)
     corr_data=corr_data.reset_index(drop=True)
     corr_data=corr_data.corr().round(2)
-    corr_data=corr_data.filter(items =[selected_product], axis=0)
+   
 
     fig4 = px.imshow(corr_data, text_auto=True, aspect="auto")
     fig4.update_layout(autosize=False,width=700,margin=dict(l=0, r=0, t=10, b=0),)
